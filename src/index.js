@@ -1,7 +1,6 @@
 import { version } from '../package.json';
 import './index.css';
 // Enable LiveReload
-console.log(process.env.NODE_ENV)
 if(process.env.NODE_ENV === "development"){
   document.write(
     '<script src="http://' + (location.host || 'localhost').split(':')[0] +

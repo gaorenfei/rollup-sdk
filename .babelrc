@@ -1,8 +1,10 @@
 {
     "presets": [
       ["@babel/preset-env", {
-        "modules": false //防止转换成coomjs模块
+        "modules": false // 不使用commonjs
       }]
     ],
-    "plugins": []
+    "plugins": [
+      ["@babel/plugin-proposal-class-properties",{ "loose": true }]
+    ]
 }

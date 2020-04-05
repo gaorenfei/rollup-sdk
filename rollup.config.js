@@ -6,7 +6,7 @@ import commonjs from 'rollup-plugin-commonjs'; //将CommonJS模块转为ES6可�
 import replace from 'rollup-plugin-replace' // 替换待打包文件里的一些变量，如 process在浏览器端是不存在的，需要被替换
 import { uglify } from 'rollup-plugin-uglify'; // 压缩代码
 import serve from 'rollup-plugin-serve'; // 开启本地服务的插件
-import livereload from 'rollup-plugin-livereload' // 实时刷新页面
+// import livereload from 'rollup-plugin-livereload' // 实时刷新页面
 import postcss from 'rollup-plugin-postcss'; // 打包样式文件
 import simplevars from 'postcss-simple-vars'; // 可以使用Sass风格的变量
 import nested from 'postcss-nested'; // 允许使用嵌套规则
@@ -52,7 +52,7 @@ const config = {
     json(),
     babel({
       exclude: 'node_modules/**', // 只编译我们的源代码
-      runtimeHelpers: true //只引入一次babel的helper函数
+      runtimeHelpers: true //只引入一次babel的helper函数,精简js代码
     }),
     replace({
       'process.env.NODE_ENV': JSON.stringify(env)
