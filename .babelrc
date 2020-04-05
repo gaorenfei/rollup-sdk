@@ -1,0 +1,8 @@
+{
+    "presets": [
+      ["@babel/preset-env", {
+        "modules": false //防止转换成coomjs模块
+      }]
+    ],
+    "plugins": []
+}
