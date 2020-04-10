@@ -13,4 +13,4 @@ function aa() {
   console.log('version124 ' + version);
 }
 
-aa()
+export default aa

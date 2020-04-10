@@ -1,13 +1,10 @@
 /*!
 * rollup v1.0.0 gaorf
 *
-* Copyright 2020-04-05T14:13:40+08:00
+* Copyright 2020-04-05T14:53:28+08:00
 *
 */
-(function (factory) {
-  typeof define === 'function' && define.amd ? define(factory) :
-  factory();
-}((function () { 'use strict';
+define(function () { 'use strict';
 
   var version = "1.0.0";
 
@@ -41,8 +38,6 @@
   var css_248z = "h1{color:#00f}";
   styleInject(css_248z);
 
-  console.log("development");
-
   {
     document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
   }
@@ -51,7 +46,7 @@
     console.log('version124 ' + version);
   }
 
-  aa();
+  return aa;
 
-})));
+});
 //# sourceMappingURL=bundle.js.map

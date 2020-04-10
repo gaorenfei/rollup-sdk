@@ -26,15 +26,14 @@ const env = process.env.NODE_ENV || "development"
 
 const config = {
   input: 'src/index.js',
-  external: ['react', 'redux'], // 告诉rollup，不打包react,redux;将其视为外部依赖
+  external: ['react'], // 告诉rollup，不打包react,redux;将其视为外部依赖
   output: {
     file: 'dist/bundle.js',
     format: 'umd', //  输出格式：umd = (amd/ iife / cjs) | es
     name:'sdk', // 当format为iife和umd时必须提供，将作为全局变量挂在window(浏览器环境)下：window.sdk=.
     sourcemap: true,
     globals: {  // 这跟external 是配套使用的，指明global.React即是外部依赖react
-      react: 'React',  
-      redux: 'Redux'
+      react: 'React'  
     }
   },
   plugins: [ 
