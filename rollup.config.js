@@ -7,11 +7,11 @@ import replace from 'rollup-plugin-replace' // 替换待打包文件里的一些
 import { uglify } from 'rollup-plugin-uglify'; // 压缩代码
 import serve from 'rollup-plugin-serve'; // 开启本地服务的插件
 // import livereload from 'rollup-plugin-livereload' // 实时刷新页面
-import postcss from 'rollup-plugin-postcss'; // 打包样式文件
-import simplevars from 'postcss-simple-vars'; // 可以使用Sass风格的变量
-import nested from 'postcss-nested'; // 允许使用嵌套规则
-import cssnext from 'postcss-cssnext'; // 这个插件集使得大多数现代CSS语法(通过最新的CSS标准)可用
-import cssnano from 'cssnano'; // 压缩css代码
+// import postcss from 'rollup-plugin-postcss'; // 打包样式文件
+// import simplevars from 'postcss-simple-vars'; // 可以使用Sass风格的变量
+// import nested from 'postcss-nested'; // 允许使用嵌套规则
+// import cssnext from 'postcss-cssnext'; // 这个插件集使得大多数现代CSS语法(通过最新的CSS标准)可用
+// import cssnano from 'cssnano'; // 压缩css代码
 import moment from 'moment';
 import { version, name, author } from './package.json';
 
@@ -37,21 +37,21 @@ const config = {
     }
   },
   plugins: [ 
-    postcss({
-      extensions: ['.css'],
-      plugins: [
-        simplevars(),
-        nested(),
-        cssnext({ warnForDuplicates: false, }),
-        cssnano()
-      ]
-    }),
+    // postcss({
+    //   extensions: ['.css'],
+    //   plugins: [
+    //     simplevars(),
+    //     nested(),
+    //     cssnext({ warnForDuplicates: false, }),
+    //     cssnano()
+    //   ]
+    // }),
     resolve(),
     commonjs(),
     json(),
     babel({
       exclude: 'node_modules/**', // 只编译我们的源代码
-      runtimeHelpers: true //只引入一次babel的helper函数,精简js代码
+      runtimeHelpers: true //使plugin-transform-runtime生效
     }),
     replace({
       'process.env.NODE_ENV': JSON.stringify(env)
